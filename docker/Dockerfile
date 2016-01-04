@@ -6,3 +6,5 @@ RUN gem specific_install https://github.com/lattwood/fake_sns.git
 
 EXPOSE 9292
 ENV RACK_ENV=production
+
+ENTRYPOINT ["/usr/local/bundle/bin/fake_sns"]
