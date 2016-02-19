@@ -29,7 +29,7 @@ module FakeSNS
     end
 
     def sqs
-      queue_name = endpoint.split(":").last
+      queue_name = endpoint.split("/").last
       sqs = Aws::SQS::Client.new(
         region: region,
         credentials: Aws::Credentials.new(access_key_id, secret_access_key),
