@@ -41,19 +41,19 @@ module FakeSNS
     end
 
     def region
-      config ? config.fetch('region') : ENV['AWS_REGION']
+      ENV['AWS_REGION'] || config.fetch('region')
     end
 
     def access_key_id
-      config ? config.fetch('access_key_id') : ENV['AWS_ACCESS_KEY_ID']
+      ENV['AWS_ACCESS_KEY_ID'] || config.fetch('access_key_id')
     end
 
     def secret_access_key
-      config ? config.fetch('secret_access_key') : ENV['AWS_SECRET_ACCESS_KEY']
+      ENV['AWS_SECRET_ACCESS_KEY'] || config.fetch('secret_access_key')
     end
 
     def sqs_endpoint
-      config ? config.fetch('sqs_endpoint') : ENV['AWS_SQS_ENDPOINT']
+      ENV['AWS_SQS_ENDPOINT'] || config.fetch('sqs_endpoint')
     end
 
     def http
