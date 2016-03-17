@@ -37,7 +37,7 @@ module FakeSNS
         client.config.endpoint = URI(sqs_endpoint)
       }
       queue_url = sqs.get_queue_url(queue_name: queue_name).queue_url
-      sqs.send_message(queue_url: 'http://192.168.99.100:3030/' + queue_name, message_body: message_contents)
+      sqs.send_message(queue_url: sqs_endpoint + '/' + queue_name, message_body: message_contents)
     end
 
     def region
